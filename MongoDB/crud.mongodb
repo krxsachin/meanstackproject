@@ -1,4 +1,4 @@
-use("Devon");
+use("test");
  db.createCollection("Users")
 
 db.Users.insertOne({id:11, name:"Mohit", marks: 10})

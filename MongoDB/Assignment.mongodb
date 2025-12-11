@@ -1,0 +1,6 @@
+use("Devon")
+
+
+db.createCollection("Students")
+
+db.Students.insertOne({})

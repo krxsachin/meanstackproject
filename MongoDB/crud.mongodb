@@ -1,9 +1,9 @@
 use("Devon");
- db.createCollection("User2")
+ db.createCollection("Users")
 
 db.Users.insertOne({id:11, name:"Mohit", marks: 10})
 
-db.Users.find();
+db.Users.insertOne({id : 5, name : "Anmol", marks : 60})
 
 db.Users.insertMany([{
     id : 1,
@@ -51,5 +51,3 @@ db.Users.deleteOne({ name: "Sohan" });
 
 // delete many
 db.Users.deleteMany({ marks: { $gte: 49 } });
-
-db.Users.insertOne({id : 5, name : "Anmol", marks : 60})

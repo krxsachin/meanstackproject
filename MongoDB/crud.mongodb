@@ -1,0 +1,55 @@
+use("Devon");
+ db.createCollection("User2")
+
+db.Users.insertOne({id:11, name:"Mohit", marks: 10})
+
+db.Users.find();
+
+db.Users.insertMany([{
+    id : 1,
+    name : "Mahesh",
+    marks : 20
+},
+{
+    id: 2,
+    name: "Sohan",
+    marks: 50
+},
+{
+    id : 3,
+    name : "Amit", 
+    marks : 42}
+])
+
+
+// find all
+db.Users.find();
+
+// filtered
+db.Users.find({ marks: { $gte: 22 } });
+
+// projection
+db.Users.find(
+  { marks: { $gte: 22 } },
+  { name: 1, marks: 1, _id: 0 }
+);
+
+// Update one
+db.Users.updateOne(
+  { name: "Sohan" },
+  { $set: { marks: 23 } }
+);
+
+// Update many
+db.Users.updateMany(
+  { marks: { $lt: 22 } },
+  { $inc: { marks: 1 } }
+);
+
+// delete one
+db.Users.deleteOne({ name: "Sohan" });
+
+// delete many
+db.Users.deleteMany({ marks: { $gte: 49 } });
+
+db.Users.insertOne({id : 5, name : "Anmol", marks : 60})
